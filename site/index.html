@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light dark">
+<title>Running Coach</title>
+<style>
+  :root {
+    --bg: #f6f7f9; --card: #ffffff; --text: #16202b; --muted: #5b6875; --line: #e2e6eb;
+    --accent: #0b6bcb; --accent-soft: #e4f0fc;
+    --corsa: #d9480f; --corsa-bg: #ffeee6;
+    --forza: #6d3fc6; --forza-bg: #f0e9fb;
+    --bici: #0b7a5c; --bici-bg: #e2f5ee;
+    --gara: #b4231f; --gara-bg: #fde8e7;
+    --riposo: #5b6875; --riposo-bg: #eceff2;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #10161d; --card: #19212a; --text: #e6ebf0; --muted: #9aa8b6; --line: #2b3641;
+      --accent: #5aa9f0; --accent-soft: #1b2e42;
+      --corsa: #ff9466; --corsa-bg: #3a2318;
+      --forza: #b79cf0; --forza-bg: #2b2140;
+      --bici: #5fd3ad; --bici-bg: #143028;
+      --gara: #ff8a85; --gara-bg: #401d1c;
+      --riposo: #9aa8b6; --riposo-bg: #222c36;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+    font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  header { padding: 20px 16px 8px; max-width: 900px; margin: 0 auto; }
+  h1 { margin: 0; font-size: 1.5rem; }
+  .goal { margin: 4px 0 0; color: var(--muted); }
+  .countdown { display: inline-block; margin-top: 10px; padding: 4px 12px; border-radius: 999px;
+    background: var(--accent-soft); color: var(--accent); font-weight: 600; font-size: .9rem; }
+  nav { position: sticky; top: 0; z-index: 5; background: var(--bg); border-bottom: 1px solid var(--line); }
+  nav .tabs { max-width: 900px; margin: 0 auto; display: flex; gap: 4px; overflow-x: auto; padding: 8px 12px; scrollbar-width: none; }
+  nav .tabs::-webkit-scrollbar { display: none; }
+  nav a { flex: none; padding: 8px 14px; border-radius: 999px; color: var(--muted); text-decoration: none; font-weight: 600; font-size: .95rem; }
+  nav a[aria-current="page"] { background: var(--accent); color: #fff; }
+  @media (prefers-color-scheme: dark) { nav a[aria-current="page"] { color: #0b1620; } }
+  main { max-width: 900px; margin: 0 auto; padding: 16px; }
+  h2 { font-size: 1.2rem; margin: 24px 0 8px; }
+  h2:first-child { margin-top: 0; }
+  h3 { font-size: 1rem; margin: 16px 0 6px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; margin: 0 0 12px; }
+  .card > :first-child { margin-top: 0; }
+  .card > :last-child { margin-bottom: 0; }
+  .muted { color: var(--muted); }
+  .small { font-size: .9rem; }
+  ul { padding-left: 1.2rem; margin: 6px 0; }
+  li { margin: 3px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: .92rem; }
+  th, td { text-align: left; padding: 8px 6px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; font-size: .8rem; text-transform: uppercase; letter-spacing: .03em; }
+  tr:last-child td { border-bottom: 0; }
+  .scroll { overflow-x: auto; }
+  .chip { display: inline-block; padding: 1px 9px; border-radius: 999px; font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; }
+  .chip.corsa { background: var(--corsa-bg); color: var(--corsa); }
+  .chip.forza { background: var(--forza-bg); color: var(--forza); }
+  .chip.bici { background: var(--bici-bg); color: var(--bici); }
+  .chip.gara { background: var(--gara-bg); color: var(--gara); }
+  .chip.riposo, .chip.nessuno { background: var(--riposo-bg); color: var(--riposo); }
+  .row-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .big { font-size: 1.15rem; font-weight: 700; margin: 6px 0 2px; }
+  .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); gap: 8px; margin-top: 10px; }
+  .kpi { background: var(--bg); border-radius: 10px; padding: 8px 10px; }
+  .kpi b { display: block; font-size: 1.15rem; }
+  .kpi span { color: var(--muted); font-size: .8rem; }
+  details.week { background: var(--card); border: 1px solid var(--line); border-radius: 12px; margin: 0 0 10px; }
+  details.week > summary { cursor: pointer; padding: 12px 16px; list-style: none; display: flex; justify-content: space-between; gap: 10px; align-items: center; }
+  details.week > summary::-webkit-details-marker { display: none; }
+  details.week[data-current="1"] { border-color: var(--accent); }
+  details.week .inner { padding: 0 12px 12px; }
+  .badge { font-size: .75rem; padding: 1px 8px; border-radius: 999px; background: var(--accent); color: #fff; margin-left: 6px; }
+  @media (prefers-color-scheme: dark) { .badge { color: #0b1620; } }
+  .checklist label { display: flex; gap: 10px; align-items: flex-start; padding: 8px 0; border-bottom: 1px solid var(--line); cursor: pointer; }
+  .checklist label:last-child { border-bottom: 0; }
+  .checklist input { margin-top: 4px; width: 18px; height: 18px; flex: none; }
+  .checklist .qty { margin-left: auto; color: var(--muted); white-space: nowrap; padding-left: 10px; }
+  .checklist input:checked ~ .name { text-decoration: line-through; color: var(--muted); }
+  .datebar { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-bottom: 12px; }
+  input[type=date] { font: inherit; padding: 6px 10px; border-radius: 8px; border: 1px solid var(--line); background: var(--card); color: var(--text); }
+  button { font: inherit; padding: 6px 12px; border-radius: 8px; border: 1px solid var(--line); background: var(--card); color: var(--text); cursor: pointer; }
+  .notice { background: var(--accent-soft); border-radius: 10px; padding: 10px 14px; margin: 0 0 12px; font-size: .92rem; }
+  .error { padding: 20px 16px; color: var(--gara); }
+  footer { max-width: 900px; margin: 0 auto; padding: 0 16px 32px; color: var(--muted); font-size: .8rem; }
+</style>
+</head>
+<body>
+<header>
+  <h1 id="title">Running Coach</h1>
+  <p class="goal" id="goal"></p>
+  <span class="countdown" id="countdown" hidden></span>
+</header>
+<nav><div class="tabs" id="tabs" role="tablist"></div></nav>
+<main id="view" aria-live="polite"><p class="muted">Caricamento…</p></main>
+<footer id="footer"></footer>
+
+<script>
+(function () {
+  "use strict";
+
+  var DAYS = ["dom", "lun", "mar", "mer", "gio", "ven", "sab"];
+  var DAY_LABEL = { lun: "Lunedì", mar: "Martedì", mer: "Mercoledì", gio: "Giovedì", ven: "Venerdì", sab: "Sabato", dom: "Domenica" };
+  var ORDER = ["lun", "mar", "mer", "gio", "ven", "sab", "dom"];
+  var TYPE_LABEL = { corsa: "Corsa", forza: "Forza", bici: "Bici", gara: "Gara", riposo: "Riposo", nessuno: "—" };
+  var TABS = [
+    ["oggi", "Oggi"], ["piano", "Piano"], ["gara", "Gare"], ["alimentazione", "Alimentazione"],
+    ["menu", "Menu"], ["spesa", "Spesa"], ["zone", "Zone"]
+  ];
+
+  var plan = null;
+  var selectedDate = null;
+
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+  function iso(d) {
+    return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
+  }
+  function parse(s) {
+    var p = s.split("-").map(Number);
+    return new Date(p[0], p[1] - 1, p[2]);
+  }
+  function addDays(d, n) {
+    var r = new Date(d.getFullYear(), d.getMonth(), d.getDate());
+    r.setDate(r.getDate() + n);
+    return r;
+  }
+  function today() {
+    var n = new Date();
+    return new Date(n.getFullYear(), n.getMonth(), n.getDate());
+  }
+  function fmt(d) {
+    return d.toLocaleDateString("it-IT", { weekday: "long", day: "numeric", month: "long" });
+  }
+  function chip(type) {
+    return '<span class="chip ' + esc(type) + '">' + esc(TYPE_LABEL[type] || type) + "</span>";
+  }
+  function list(items) {
+    return "<ul>" + items.map(function (i) { return "<li>" + esc(i) + "</li>"; }).join("") + "</ul>";
+  }
+  function store(key, val) {
+    try { if (val === undefined) return localStorage.getItem(key); localStorage.setItem(key, val); } catch (e) { /* storage non disponibile */ }
+    return null;
+  }
+
+  function findWeek(date) {
+    for (var i = 0; i < plan.weeks.length; i++) {
+      var w = plan.weeks[i];
+      var s = parse(w.start);
+      if (date >= s && date <= addDays(s, 6)) return w;
+    }
+    return null;
+  }
+  function sessionFor(week, key) {
+    if (!week) return null;
+    var s = week.days[key];
+    if (s) return s;
+    if (key === "mer" || key === "sab") return { type: "riposo", title: "Riposo", detail: "" };
+    return { type: "nessuno", title: "Nessuna seduta", detail: "" };
+  }
+
+  /* ---------- OGGI ---------- */
+  function viewOggi() {
+    var date = selectedDate;
+    var key = DAYS[date.getDay()];
+    var week = findWeek(date);
+    var start = parse(plan.meta.planStart);
+    var end = parse(plan.meta.raceDate);
+    var html = '<div class="datebar"><input type="date" id="dp" value="' + iso(date) + '" aria-label="Data">' +
+      '<button id="dp-today" type="button">Oggi</button></div>';
+
+    html += "<h2>" + esc(fmt(date)) + "</h2>";
+
+    if (date < start) {
+      html += '<div class="notice">Il piano parte il ' + esc(fmt(start)) + ".</div>";
+    } else if (date > end) {
+      html += '<div class="notice">Il piano è concluso.</div>';
+    }
+
+    var s = sessionFor(week, key);
+    if (s) {
+      html += '<div class="card"><div class="row-head">' + chip(s.type) +
+        (week ? '<span class="muted small">Settimana ' + week.n + " · " + esc(week.label) + "</span>" : "") + "</div>" +
+        '<p class="big">' + esc(s.title) + "</p>" +
+        (s.detail ? '<p class="muted">' + esc(s.detail) + "</p>" : "") +
+        (s.fueling ? '<p><b>Fueling:</b> ' + esc(s.fueling) + "</p>" : "") + "</div>";
+    }
+
+    var nd = plan.nutrition.dayTypes[key];
+    var md = plan.menu.days[key];
+    html += '<div class="card"><h3>Alimentazione</h3><p><b>' + esc(nd.label) + "</b></p>" +
+      '<div class="kpis"><div class="kpi"><b>' + nd.kcal + "</b><span>kcal</span></div>" +
+      '<div class="kpi"><b>' + nd.protein + " g</b><span>proteine</span></div>" +
+      '<div class="kpi"><b>' + nd.carbs + " g</b><span>carboidrati (" + String(nd.carbsGkg).replace(".", ",") + " g/kg)</span></div>" +
+      '<div class="kpi"><b>' + nd.fat + " g</b><span>grassi</span></div></div>" +
+      '<p class="small muted" style="margin-top:10px">' + esc(nd.composition) + "</p></div>";
+
+    html += '<div class="card"><h3>Menu</h3><table><tbody>' +
+      "<tr><th>Colazione</th><td>" + esc(plan.menu.breakfast) + "</td></tr>" +
+      "<tr><th>Pranzo</th><td>" + esc(md.lunch) + "</td></tr>" +
+      "<tr><th>Spuntini</th><td>" + esc(md.snacks) + "</td></tr>" +
+      "<tr><th>Cena</th><td>" + esc(md.dinner) + "</td></tr></tbody></table></div>";
+
+    if (key === "lun" && s && s.type === "forza") {
+      html += '<p class="small muted">Dettagli degli esercizi nella sezione Piano.</p>';
+    }
+    return html;
+  }
+
+  function bindOggi() {
+    var dp = document.getElementById("dp");
+    dp.addEventListener("change", function () {
+      if (dp.value) { selectedDate = parse(dp.value); render(); }
+    });
+    document.getElementById("dp-today").addEventListener("click", function () {
+      selectedDate = today(); render();
+    });
+  }
+
+  /* ---------- PIANO ---------- */
+  function viewPiano() {
+    var t = today();
+    var cur = findWeek(t);
+    var a = plan.athlete;
+    var html = "<h2>Struttura settimanale</h2>" +
+      '<div class="card">' + list(a.weekStructure) + '<p class="small muted">' + esc(a.warmupNote) + "</p></div>";
+
+    html += "<h2>Settimane</h2>";
+    plan.weeks.forEach(function (w) {
+      var isCur = cur && cur.n === w.n;
+      html += '<details class="week"' + (isCur ? " open" : "") + ' data-current="' + (isCur ? 1 : 0) + '">' +
+        "<summary><span><b>Settimana " + w.n + "</b> · " + esc(w.label) +
+        (isCur ? '<span class="badge">ora</span>' : "") + '</span><span class="muted small">' + w.km + " km</span></summary>" +
+        '<div class="inner">' + (w.note ? '<p class="small muted">' + esc(w.note) + "</p>" : "") +
+        '<div class="scroll"><table><thead><tr><th>Giorno</th><th>Seduta</th></tr></thead><tbody>';
+      ORDER.forEach(function (k) {
+        var s = sessionFor(w, k);
+        html += "<tr><td>" + DAY_LABEL[k].slice(0, 3) + "</td><td>" + chip(s.type) + " <b>" + esc(s.title) + "</b>" +
+          (s.detail ? '<br><span class="muted small">' + esc(s.detail) + "</span>" : "") + "</td></tr>";
+      });
+      html += "</tbody></table></div></div></details>";
+    });
+
+    var st = plan.strength;
+    html += "<h2>Forza e pliometria (lunedì)</h2><div class=\"card\"><p>" + esc(st.intro) + "</p><h3>Pliometria</h3><ul>" +
+      st.plyometrics.map(function (p) { return "<li><b>" + esc(p.phase) + ":</b> " + esc(p.items) + "</li>"; }).join("") +
+      "</ul><h3>Forza</h3><p>" + esc(st.strength) + "</p><h3>Progressione</h3><p>" + esc(st.progression) +
+      '</p><p class="small muted">' + esc(st.note) + "</p></div>";
+    return html;
+  }
+
+  /* ---------- GARE ---------- */
+  function viewGara() {
+    var n = plan.nutrition;
+    var t = plan.test10k;
+    var html = "<h2>" + esc(t.title) + "</h2><div class=\"card\"><div class=\"scroll\"><table><thead><tr><th>10 km</th><th>Mezza prevista</th><th>Obiettivo</th></tr></thead><tbody>" +
+      t.rows.map(function (r) { return "<tr><td>" + esc(r.time) + "</td><td>" + esc(r.half) + "</td><td>" + esc(r.goal) + "</td></tr>"; }).join("") +
+      '</tbody></table></div><p class="small muted">' + esc(t.note) + "</p></div>";
+    html += "<h2>" + esc(n.race10k.title) + "</h2><div class=\"card\">" + list(n.race10k.steps) + "</div>";
+    html += "<h2>Mezza tranquilla del 13/12</h2><div class=\"card\"><p>Domenica 13/12 a 5:10–5:20/km, senza spingere. Lunedì 14/12 riposo. È la prova generale: colazione, gel, bevande e caffeina come il 20/12.</p></div>";
+    html += "<h2>" + esc(n.raceHalf.title) + "</h2><div class=\"card\">" + list(n.raceHalf.steps) + "</div>";
+    html += "<h2>Fueling nei lunghi</h2><div class=\"card\"><div class=\"scroll\"><table><thead><tr><th>Sett.</th><th>Uscita</th><th>Durante</th></tr></thead><tbody>" +
+      n.fueling.map(function (f) { return "<tr><td>" + esc(f.weeks) + "</td><td>" + esc(f.run) + "</td><td>" + esc(f.what) + "</td></tr>"; }).join("") +
+      '</tbody></table></div><p class="small muted">' + esc(n.fuelingRule) + "</p></div>";
+    return html;
+  }
+
+  /* ---------- ALIMENTAZIONE ---------- */
+  function viewAlimentazione() {
+    var n = plan.nutrition;
+    var html = '<div class="notice">' + esc(n.disclaimer) + "</div>" +
+      '<div class="card"><p>' + esc(n.summary) + "</p></div>";
+
+    html += "<h2>Target per tipo di giornata</h2><div class=\"card\"><div class=\"scroll\"><table><thead><tr><th>Giorno</th><th>kcal</th><th>Prot.</th><th>Carb.</th><th>Grassi</th></tr></thead><tbody>" +
+      ORDER.map(function (k) {
+        var d = n.dayTypes[k];
+        return "<tr><td>" + esc(d.label) + "</td><td>" + d.kcal + "</td><td>" + d.protein + " g</td><td>" + d.carbs + " g<br><span class=\"muted small\">" +
+          String(d.carbsGkg).replace(".", ",") + " g/kg</span></td><td>" + d.fat + " g</td></tr>";
+      }).join("") + "</tbody></table></div></div>";
+
+    html += "<h2>Giornata base (riposo)</h2><div class=\"card\"><table><tbody>" +
+      n.base.map(function (b) { return "<tr><th>" + esc(b.meal) + "</th><td>" + esc(b.text) + "</td></tr>"; }).join("") + "</tbody></table></div>";
+
+    html += "<h2>Kit da aggiungere</h2>" + n.kits.map(function (k) {
+      return '<div class="card"><b>' + esc(k.name) + '</b> <span class="muted small">+' + k.kcal + " kcal</span><p>" + esc(k.text) + "</p></div>";
+    }).join("");
+
+    html += "<h2>Tempi</h2><div class=\"card\">" + list(n.timing) + "</div>";
+    html += "<h2>Composizione per giorno</h2><div class=\"card\"><table><tbody>" +
+      ORDER.map(function (k) { return "<tr><th>" + DAY_LABEL[k].slice(0, 3) + "</th><td>" + esc(n.dayTypes[k].composition) + "</td></tr>"; }).join("") + "</tbody></table></div>";
+    html += "<h2>Proteine vegetariane</h2><div class=\"card\"><p>" + esc(n.proteinSources) + "</p></div>";
+    html += "<h2>Idratazione</h2><div class=\"card\">" + list(n.hydration) + "</div>";
+    html += "<h2>Integrazione</h2><div class=\"card\">" + list(n.supplements) + "</div>";
+    html += "<h2>Controllo del peso</h2><div class=\"card\">" + list(n.weightControl) + "</div>";
+    html += "<h2>Alcol e caffè</h2><div class=\"card\">" + list(n.alcoholCoffee) + "</div>";
+    return html;
+  }
+
+  /* ---------- MENU ---------- */
+  function viewMenu() {
+    var m = plan.menu;
+    var html = "<h2>Menu della settimana</h2><div class=\"card\"><p><b>Colazione (tutti i giorni):</b> " + esc(m.breakfast) + "</p></div>" +
+      ORDER.map(function (k) {
+        var d = m.days[k];
+        return '<div class="card"><h3>' + DAY_LABEL[k] + "</h3><table><tbody>" +
+          "<tr><th>Pranzo</th><td>" + esc(d.lunch) + "</td></tr>" +
+          "<tr><th>Spuntini</th><td>" + esc(d.snacks) + "</td></tr>" +
+          "<tr><th>Cena</th><td>" + esc(d.dinner) + "</td></tr></tbody></table></div>";
+      }).join("") +
+      '<p class="small muted">' + esc(m.raceNote) + "</p>";
+
+    html += "<h2>Ricette da surgelare</h2>" + plan.recipes.map(function (r) {
+      return '<div class="card"><b>' + esc(r.name) + '</b> <span class="muted small">' + esc(r.perWeek) + " a settimana</span>" +
+        "<p><b>Per porzione:</b> " + esc(r.perPortion) + "</p><p><b>Batch:</b> " + esc(r.batch) + "</p><p>" + esc(r.method) + "</p></div>";
+    }).join("");
+    html += "<h2>Sessione di cucina tipo (~75')</h2><div class=\"card\"><ol style=\"padding-left:1.2rem;margin:0\">" +
+      plan.cookingSession.map(function (s) { return "<li>" + esc(s) + "</li>"; }).join("") + "</ol></div>";
+    html += "<h2>Sicurezza alimentare</h2><div class=\"card\">" + list(plan.foodSafety) + "</div>";
+    return html;
+  }
+
+  /* ---------- SPESA ---------- */
+  function checklist(group, items) {
+    var saved = {};
+    try { saved = JSON.parse(store("shop:" + group) || "{}"); } catch (e) { saved = {}; }
+    return '<div class="card checklist" data-group="' + group + '">' + items.map(function (it, i) {
+      return '<label><input type="checkbox" data-i="' + i + '"' + (saved[i] ? " checked" : "") + '><span class="name">' + esc(it.item) +
+        '</span><span class="qty">' + esc(it.qty) + "</span></label>";
+    }).join("") + "</div>";
+  }
+  function viewSpesa() {
+    var s = plan.shopping;
+    return '<div class="datebar"><button id="shop-reset" type="button">Azzera le spunte</button></div>' +
+      "<h2>Spesa settimanale</h2>" + checklist("weekly", s.weekly) +
+      "<h2>Scorta freezer e dispensa</h2><p class=\"small muted\">Quantità per una settimana, da rifornire ogni 2–4 settimane.</p>" + checklist("freezer", s.freezer) +
+      "<h2>Sport</h2>" + checklist("sport", s.sport) + '<p class="small muted">' + esc(s.sportNote) + "</p>";
+  }
+  function bindSpesa() {
+    document.querySelectorAll(".checklist").forEach(function (box) {
+      box.addEventListener("change", function () {
+        var state = {};
+        box.querySelectorAll("input").forEach(function (inp) { if (inp.checked) state[inp.getAttribute("data-i")] = 1; });
+        store("shop:" + box.getAttribute("data-group"), JSON.stringify(state));
+      });
+    });
+    document.getElementById("shop-reset").addEventListener("click", function () {
+      ["weekly", "freezer", "sport"].forEach(function (g) { store("shop:" + g, "{}"); });
+      render();
+    });
+  }
+
+  /* ---------- ZONE ---------- */
+  function viewZone() {
+    var a = plan.athlete;
+    return "<h2>Zone di ritmo</h2><div class=\"card\"><p>Velocità critica: <b>" + esc(a.vc) + "</b> · D' " + esc(a.dPrime) + "</p>" +
+      '<div class="scroll"><table><thead><tr><th>Zona</th><th>% VC</th><th>min/km</th><th>Uso</th></tr></thead><tbody>' +
+      plan.zones.map(function (z) {
+        return "<tr><td><b>" + esc(z.name) + "</b></td><td>" + z.pct + "%</td><td>" + esc(z.pace) + "</td><td>" + esc(z.use) + "</td></tr>";
+      }).join("") + "</tbody></table></div></div>" +
+      "<h2>Bici</h2><div class=\"card\"><p>" + esc(a.bike) + "</p></div>" +
+      "<h2>Realismo dell'obiettivo</h2><div class=\"card\"><p>" + esc(plan.meta.realism) + "</p></div>";
+  }
+
+  /* ---------- routing ---------- */
+  var VIEWS = { oggi: viewOggi, piano: viewPiano, gara: viewGara, alimentazione: viewAlimentazione, menu: viewMenu, spesa: viewSpesa, zone: viewZone };
+  var BINDERS = { oggi: bindOggi, spesa: bindSpesa };
+
+  function current() {
+    var h = (location.hash || "").replace("#", "");
+    return VIEWS[h] ? h : "oggi";
+  }
+  function renderTabs(active) {
+    document.getElementById("tabs").innerHTML = TABS.map(function (t) {
+      return '<a href="#' + t[0] + '"' + (t[0] === active ? ' aria-current="page"' : "") + ">" + esc(t[1]) + "</a>";
+    }).join("");
+  }
+  function render() {
+    var tab = current();
+    renderTabs(tab);
+    document.getElementById("view").innerHTML = VIEWS[tab]();
+    if (BINDERS[tab]) BINDERS[tab]();
+  }
+
+  function init() {
+    document.getElementById("title").textContent = plan.meta.title;
+    document.getElementById("goal").textContent = "Obiettivo: " + plan.meta.goal + " · " + fmt(parse(plan.meta.raceDate));
+    var days = Math.round((parse(plan.meta.raceDate) - today()) / 86400000);
+    var cd = document.getElementById("countdown");
+    if (days > 0) { cd.textContent = "Mancano " + days + (days === 1 ? " giorno" : " giorni") + " alla gara"; cd.hidden = false; }
+    else if (days === 0) { cd.textContent = "Oggi è il giorno della gara"; cd.hidden = false; }
+    document.getElementById("footer").textContent = "Piano aggiornato il " + parse(plan.meta.updated).toLocaleDateString("it-IT") +
+      ". Nessun consiglio medico: in caso di dolore o infortunio consulta un professionista.";
+    selectedDate = today();
+    window.addEventListener("hashchange", function () { render(); window.scrollTo(0, 0); });
+    render();
+  }
+
+  fetch("plan.json", { cache: "no-cache" })
+    .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+    .then(function (data) { plan = data; init(); })
+    .catch(function (e) {
+      document.getElementById("view").innerHTML = '<p class="error">Impossibile caricare plan.json (' + esc(e.message) + ").</p>";
+    });
+})();
+</script>
+</body>
+</html>

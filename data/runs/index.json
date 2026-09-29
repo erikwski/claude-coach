@@ -1,0 +1,9 @@
+{
+  "athlete_id": "i731779",
+  "last_sync": "2026-09-29T21:30:00",
+  "runs": [
+    {"id": "i191620669", "date": "2026-09-29", "name": "Reggio nell'Emilia - S1 Mar - Facile + 5 allunghi",
+     "file": "2026-09-29_i191620669.json", "distance_m": 8181, "moving_time_s": 2823,
+     "avg_hr": 147, "avg_pace_min_km": "5:46", "analyzed": true}
+  ]
+}

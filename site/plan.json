@@ -1,0 +1,372 @@
+{
+  "meta": {
+    "title": "Running Coach",
+    "goal": "Mezza maratona in 1:35:00 (4:30/km)",
+    "raceDate": "2026-12-20",
+    "planStart": "2026-09-29",
+    "updated": "2026-09-29",
+    "realism": "Con la VC attuale il tempo realistico è 1:38–1:40. Per 1:35 la VC deve salire a circa 4:22–4:25. Fattibile, non garantito."
+  },
+  "zones": [
+    { "name": "Recupero", "pct": 70, "pace": "6:30", "use": "Corsa rigenerante, defaticamento" },
+    { "name": "Fondo lento", "pct": 78, "pace": "5:50", "use": "Volume aerobico, lungo lento" },
+    { "name": "Fondo medio", "pct": 85, "pace": "5:21", "use": "Resistenza aerobica, medio" },
+    { "name": "Sub-soglia", "pct": 92, "pace": "4:56", "use": "Medio-veloce, appena sotto la VC" },
+    { "name": "Soglia (VC)", "pct": 100, "pace": "4:33", "use": "Ripetute lunghe, tempo alla VC" },
+    { "name": "Ritmo gara", "pct": 101, "pace": "4:30", "use": "Obiettivo 1:35" },
+    { "name": "VO2max", "pct": 105, "pace": "4:20", "use": "Ripetute brevi, recupero breve" },
+    { "name": "Anaerobico", "pct": 112, "pace": "4:04", "use": "Allunghi" }
+  ],
+  "athlete": {
+    "vc": "3,67 m/s = 4:33/km",
+    "dPrime": "160 m",
+    "bike": "Nessun FTP. Sedute facili a FC 120–150 bpm.",
+    "weekStructure": [
+      "Lunedì: forza per runner + pliometria (dal 5/10; riposo dopo le gare)",
+      "Martedì: corsa di qualità (ripetute o soglia)",
+      "Mercoledì: riposo",
+      "Giovedì: bici sui rulli con Zwift, facile, FC 120–150 (dall'8/10)",
+      "Venerdì: easy run (progressivo alla sett. 1, fartlek alla sett. 6)",
+      "Sabato: riposo",
+      "Domenica: lungo, spesso con finale a ritmo"
+    ],
+    "warmupNote": "Ogni seduta di qualità include 2 km di riscaldamento e 1 km di defaticamento facili (già compresi nei km)."
+  },
+  "weeks": [
+    {
+      "n": 1, "start": "2026-09-28", "label": "29/9 – 4/10", "km": 26,
+      "note": "Ripresa. Il piano parte martedì 29/9.",
+      "days": {
+        "mar": { "type": "corsa", "title": "8 km facile + 5 allunghi", "detail": "Facile a 5:50/km, poi 5 allunghi a circa 4:04." },
+        "ven": { "type": "corsa", "title": "Progressivo 6 km", "detail": "4 km a 5:50, poi 2 km a 5:21." },
+        "dom": { "type": "corsa", "title": "12 km facile", "detail": "Ritmo 5:50/km.", "fueling": "Solo acqua. Facoltativo: 1 gel dopo 60' per provarlo." }
+      }
+    },
+    {
+      "n": 2, "start": "2026-10-05", "label": "5 – 11/10", "km": 30,
+      "note": "Prima settimana con forza e bici.",
+      "days": {
+        "lun": { "type": "forza", "title": "Forza + pliometria (fase 1)", "detail": "3×10 con carichi leggeri." },
+        "mar": { "type": "corsa", "title": "4×1 km a 4:56, rec 90\"", "detail": "Sub-soglia. Riscaldamento 2 km e defaticamento 1 km facili." },
+        "gio": { "type": "bici", "title": "Zwift 60'", "detail": "FC 120–150. 5×1' a cadenza 100+ nel mezzo." },
+        "ven": { "type": "corsa", "title": "Easy run 7 km a 5:50", "detail": "Facile." },
+        "dom": { "type": "corsa", "title": "14 km, ultimi 2 a 5:21", "detail": "Resto a 5:50.", "fueling": "Solo acqua. Facoltativo: 1 gel dopo 60'." }
+      }
+    },
+    {
+      "n": 3, "start": "2026-10-12", "label": "12 – 18/10", "km": 33, "note": "",
+      "days": {
+        "lun": { "type": "forza", "title": "Forza + pliometria (fase 1)", "detail": "3×10 con carichi leggeri." },
+        "mar": { "type": "corsa", "title": "5×1 km a 4:33, rec 2'", "detail": "Soglia." },
+        "gio": { "type": "bici", "title": "Zwift 60'", "detail": "FC 120–150. 5×1' a cadenza 100+." },
+        "ven": { "type": "corsa", "title": "Easy run 8 km", "detail": "5:50/km." },
+        "dom": { "type": "corsa", "title": "15 km, ultimi 4 a 5:21", "detail": "Resto a 5:50.", "fueling": "Solo acqua. Facoltativo: 1 gel dopo 60'." }
+      }
+    },
+    {
+      "n": 4, "start": "2026-10-19", "label": "19 – 25/10", "km": 35, "note": "",
+      "days": {
+        "lun": { "type": "forza", "title": "Forza + pliometria (fase 1)", "detail": "3×8, poi 3×6–8." },
+        "mar": { "type": "corsa", "title": "4×1500 m a 4:33, rec 2'", "detail": "Soglia." },
+        "gio": { "type": "bici", "title": "Zwift 60'", "detail": "FC 120–150. 5×1' a cadenza 100+." },
+        "ven": { "type": "corsa", "title": "Easy run 8 km", "detail": "5:50/km." },
+        "dom": { "type": "corsa", "title": "16 km, ultimi 5 a 4:56", "detail": "Resto a 5:50.", "fueling": "30–45 g di carboidrati all'ora: 1 gel al 45' e uno al 90'." }
+      }
+    },
+    {
+      "n": 5, "start": "2026-10-26", "label": "26/10 – 1/11", "km": 37, "note": "",
+      "days": {
+        "lun": { "type": "forza", "title": "Forza + pliometria (fase 2)", "detail": "3×8, poi 3×6–8." },
+        "mar": { "type": "corsa", "title": "3×2 km a 4:33, rec 2'", "detail": "Soglia." },
+        "gio": { "type": "bici", "title": "Zwift 60'", "detail": "FC 120–150. 5×1' a cadenza 100+." },
+        "ven": { "type": "corsa", "title": "Easy run 8 km", "detail": "5:50/km." },
+        "dom": { "type": "corsa", "title": "18 km, ultimi 6 a 4:56", "detail": "Resto a 5:50.", "fueling": "30–45 g di carboidrati all'ora: 1 gel al 45' e uno al 90'." }
+      }
+    },
+    {
+      "n": 6, "start": "2026-11-02", "label": "2 – 8/11 (scarico)", "km": 27,
+      "note": "Settimana di scarico (−20/25%).",
+      "days": {
+        "lun": { "type": "forza", "title": "Forza + pliometria (scarico)", "detail": "Metà delle serie." },
+        "mar": { "type": "corsa", "title": "4×1 km a 4:33, rec 2'", "detail": "Soglia." },
+        "gio": { "type": "bici", "title": "Zwift 45' costante", "detail": "FC 120–150." },
+        "ven": { "type": "corsa", "title": "Fartlek: 4×2' a 4:56, rec 2'", "detail": "Facile prima e dopo." },
+        "dom": { "type": "corsa", "title": "12 km facile", "detail": "5:50/km.", "fueling": "Solo acqua." }
+      }
+    },
+    {
+      "n": 7, "start": "2026-11-09", "label": "9 – 15/11", "km": 37, "note": "",
+      "days": {
+        "lun": { "type": "forza", "title": "Forza + pliometria (fase 2)", "detail": "3×6–8 pesanti." },
+        "mar": { "type": "corsa", "title": "5×1500 m a 4:30, rec 90\"", "detail": "Ritmo gara." },
+        "gio": { "type": "bici", "title": "Zwift 60'", "detail": "FC 120–150. 5×1' a cadenza alta." },
+        "ven": { "type": "corsa", "title": "Easy run 8 km", "detail": "5:50/km." },
+        "dom": { "type": "corsa", "title": "18 km, centrali 8 a 4:56", "detail": "Resto a 5:50.", "fueling": "Obiettivo 60 g di carboidrati all'ora: 1 gel da ~25 g ogni 25'." }
+      }
+    },
+    {
+      "n": 8, "start": "2026-11-16", "label": "16 – 22/11", "km": 41,
+      "note": "Lungo da 20 km: il massimo. Se molto stanco, accorciare a 18 km.",
+      "days": {
+        "lun": { "type": "forza", "title": "Forza + pliometria (fase 2)", "detail": "3×6–8 pesanti." },
+        "mar": { "type": "corsa", "title": "2×4 km a 4:33, rec 3' attivo a 6:00", "detail": "Soglia lunga." },
+        "gio": { "type": "bici", "title": "Zwift 60'", "detail": "FC 120–150. 5×1' a cadenza alta." },
+        "ven": { "type": "corsa", "title": "Easy run 8 km", "detail": "5:50/km." },
+        "dom": { "type": "corsa", "title": "20 km, ultimi 8 a 4:56", "detail": "Resto a 5:50. Accorciabile a 18 km.", "fueling": "60 g di carboidrati all'ora, come in gara." }
+      }
+    },
+    {
+      "n": 9, "start": "2026-11-23", "label": "23 – 29/11", "km": 31,
+      "note": "Domenica 29/11: gara 10 km, test per decidere l'obiettivo.",
+      "days": {
+        "lun": { "type": "forza", "title": "Forza leggera (fase 3)", "detail": "2 serie. Se molto stanco dopo il lungo, solo core e mobilità." },
+        "mar": { "type": "corsa", "title": "4×1 km a 4:33, rec 2' (leggero)", "detail": "Soglia leggera." },
+        "gio": { "type": "bici", "title": "Zwift 45' costante", "detail": "FC 120–150." },
+        "ven": { "type": "corsa", "title": "Easy run 6 km + 4 allunghi", "detail": "Facile." },
+        "dom": { "type": "gara", "title": "Gara 10 km (test)", "detail": "Primi 3 km a 4:35–4:40, poi tenere; spingere negli ultimi 3 km. Target 44:30–45:00.", "fueling": "Nessun gel necessario. Colazione con ~100 g di carboidrati 3 ore prima." }
+      }
+    },
+    {
+      "n": 10, "start": "2026-11-30", "label": "30/11 – 6/12", "km": 33,
+      "note": "Lunedì riposo dopo il 10 km.",
+      "days": {
+        "lun": { "type": "riposo", "title": "Riposo", "detail": "Dopo la gara del 10 km. Mangia proteine e carboidrati normali, senza digiuno." },
+        "mar": { "type": "corsa", "title": "4×2 km a 4:30, rec 2'", "detail": "Se le gambe sono pesanti, 4:33." },
+        "gio": { "type": "bici", "title": "Zwift 45' costante", "detail": "FC 120–150." },
+        "ven": { "type": "corsa", "title": "Easy run 7 km", "detail": "5:50/km." },
+        "dom": { "type": "corsa", "title": "14 km, di cui 5 a 4:33", "detail": "Resto a 5:50.", "fueling": "Prova della strategia gara, incluso caffè o gel con caffeina." }
+      }
+    },
+    {
+      "n": 11, "start": "2026-12-07", "label": "7 – 13/12", "km": 34,
+      "note": "Domenica 13/12: mezza tranquilla, prova generale.",
+      "days": {
+        "lun": { "type": "forza", "title": "Mobilità e core", "detail": "20' di mobilità, core, pogo 2×15." },
+        "mar": { "type": "corsa", "title": "4×1 km a 4:30, rec 2'", "detail": "Ritmo gara." },
+        "gio": { "type": "bici", "title": "Zwift 30–40' molto leggero", "detail": "FC 120–140." },
+        "ven": { "type": "corsa", "title": "Easy run 5 km + 4 allunghi", "detail": "Facile." },
+        "dom": { "type": "gara", "title": "Mezza tranquilla a 5:10–5:20", "detail": "Senza spingere. Sostituisce il lungo.", "fueling": "Prova generale completa: colazione, gel, bevande e caffeina come in gara." }
+      }
+    },
+    {
+      "n": 12, "start": "2026-12-14", "label": "14 – 20/12", "km": 33,
+      "note": "Settimana della gara. Lunedì riposo dopo la mezza.",
+      "days": {
+        "lun": { "type": "riposo", "title": "Riposo", "detail": "Dopo la mezza del 13/12." },
+        "mar": { "type": "corsa", "title": "3×1 km a 4:30, rec 2'", "detail": "Ritmo gara." },
+        "gio": { "type": "bici", "title": "Zwift 30–40' molto leggero", "detail": "FC 120–140." },
+        "ven": { "type": "corsa", "title": "Easy run 4 km + 4 allunghi", "detail": "Facile." },
+        "dom": { "type": "gara", "title": "Mezza maratona: gara", "detail": "Primi 5 km a 4:33, poi 4:30. Se si sta bene, accelerare dopo il 15° km.", "fueling": "Vedi la sezione Gara." }
+      }
+    }
+  ],
+  "strength": {
+    "intro": "Lunedì, circa 45–50'. Riscaldamento 8' (mobilità anca, 5' bici o camminata, attivazione glutei). Pliometria prima della forza. RPE 7–8, mai a cedimento (2 ripetizioni di riserva).",
+    "plyometrics": [
+      { "phase": "Fase 1 (sett. 2–4)", "items": "Pogo 3×15, skip A 3×20 m, squat jump 2×6, salti bassi sul posto 2×8" },
+      { "phase": "Fase 2 (sett. 5–8)", "items": "Box jump 3×5, bounding 3×20 m, salti monopodalici 3×5/gamba, bound laterali 3×6" },
+      { "phase": "Fase 3 (sett. 9–10)", "items": "Pogo 2×15, bounding 2×20 m" }
+    ],
+    "strength": "Squat 3×6–8, stacco rumeno 3×8, affondi bulgari o step-up 3×8/gamba, hip thrust 3×10, calf raise monopodalico (ginocchio teso e piegato) 3×12, plank e plank laterale 3×40\".",
+    "progression": "Sett. 2–3: 3×10 leggeri. Sett. 4–5: 3×8, poi 3×6–8. Sett. 6: scarico, metà serie. Sett. 7–8: 3×6–8 pesanti. Sett. 9: 2 serie. Sett. 10: riposo. Sett. 11: 20' di mobilità, core, pogo 2×15. Sett. 12: riposo.",
+    "note": "Il lunedì viene dopo il lungo e prima delle ripetute del martedì, quindi la forza resta moderata. Se molto stanco dopo il lungo da 20 km (23/11), saltare la pliometria e fare solo core e mobilità."
+  },
+  "test10k": {
+    "title": "Test del 29/11: gara 10 km",
+    "rows": [
+      { "time": "≤ 44:45", "half": "~1:34–1:35", "goal": "1:35 realistico, partenza a 4:30" },
+      { "time": "44:45–46:00", "half": "~1:36–1:37", "goal": "Puntare a 1:37, partenza a 4:36" },
+      { "time": "> 46:00", "half": "~1:38 o più", "goal": "Obiettivo 1:38–1:40, partenza a 4:40" }
+    ],
+    "note": "Stima: mezza ≈ tempo dei 10 km × 2,1."
+  },
+  "nutrition": {
+    "disclaimer": "Proposta basata sull'evidenza in ambito sportivo, non un piano dietetico medico. Le stime hanno un errore di circa ±10%. Per integratori, patologie o variazioni di peso importanti consultare un dietologo o un medico dello sport.",
+    "summary": "Mantenimento con un deficit minimo (~2550 kcal al giorno in media). Obiettivo: mantenere il peso o scendere di 1–2 kg senza compromettere gli allenamenti. Proteine 1,6–1,7 g/kg ogni giorno, in 4–5 pasti.",
+    "dayTypes": {
+      "lun": { "label": "Lunedì – forza", "kcal": 2350, "protein": 125, "carbsGkg": 4.5, "carbs": 330, "fat": 58, "composition": "Base + Kit A prima della forza" },
+      "mar": { "label": "Martedì – qualità", "kcal": 2800, "protein": 120, "carbsGkg": 5.9, "carbs": 430, "fat": 67, "composition": "Base + Kit A (~17:30) + Kit B dopo la corsa + 30 g di pasta/riso extra a pranzo" },
+      "mer": { "label": "Mercoledì – riposo", "kcal": 2100, "protein": 120, "carbsGkg": 3.7, "carbs": 270, "fat": 58, "composition": "Base" },
+      "gio": { "label": "Giovedì – bici", "kcal": 2500, "protein": 120, "carbsGkg": 4.7, "carbs": 340, "fat": 73, "composition": "Base + Kit A prima della bici + 30 g di pasta/riso extra a pranzo" },
+      "ven": { "label": "Venerdì – easy", "kcal": 2650, "protein": 120, "carbsGkg": 5.2, "carbs": 380, "fat": 66, "composition": "Base + Kit A (2 ore prima) + Kit B dopo la corsa" },
+      "sab": { "label": "Sabato – riposo", "kcal": 2100, "protein": 120, "carbsGkg": 3.7, "carbs": 270, "fat": 58, "composition": "Base, con cena a base di 100 g di pasta o riso al posto delle patate (carboidrati per il lungo)" },
+      "dom": { "label": "Domenica – lungo", "kcal": 3400, "protein": 125, "carbsGkg": 7.5, "carbs": 550, "fat": 73, "composition": "Base + 2 × Kit A + Kit B + 50 g di pasta/riso extra a pranzo + gel durante il lungo" }
+    },
+    "base": [
+      { "meal": "Colazione", "text": "Yogurt greco 200 g, fiocchi d'avena 50 g, frutta 150 g, noci 15 g" },
+      { "meal": "Spuntino", "text": "Skyr 170 g, frutta 150 g" },
+      { "meal": "Pranzo", "text": "Pasta o riso (meglio integrale) 80 g, legumi cotti 150 g, verdure 300 g, olio extravergine 10 g, parmigiano 15 g" },
+      { "meal": "Spuntino pomeridiano", "text": "Pane integrale 50 g con hummus 40 g" },
+      { "meal": "Cena", "text": "Pesce bianco 200 g (oppure 2 uova + tofu 100 g), patate 250 g, verdure 300 g, olio 10 g" }
+    ],
+    "kits": [
+      { "name": "Kit A – pre-allenamento", "text": "1 banana, pane 50 g con marmellata o miele 20 g. 60–90 minuti prima della seduta, poche fibre.", "kcal": 260 },
+      { "name": "Kit B – recupero", "text": "Latte 250 ml (o bevanda di soia), 30 g di proteine in polvere, 1 banana. Entro 1 ora dalla fine della seduta.", "kcal": 320 },
+      { "name": "Extra carboidrati a pranzo", "text": "+30 g di pasta o riso crudi.", "kcal": 105 }
+    ],
+    "timing": [
+      "Martedì sera: pranzo ricco di carboidrati, Kit A a metà pomeriggio, corsa, poi Kit B e cena leggera.",
+      "Venerdì prima di pranzo: colazione leggera 2 ore prima, corsa, pranzo con carboidrati e proteine (base + Kit B).",
+      "Domenica mattina: cena del sabato ricca di carboidrati e povera di fibre, colazione 2,5–3 ore prima del lungo."
+    ],
+    "proteinSources": "Uova, latticini (skyr, yogurt greco, ricotta, fiocchi di latte, parmigiano), legumi, tofu, tempeh, seitan, pesce, proteine in polvere. Associare cereali e legumi nella stessa giornata.",
+    "hydration": [
+      "~35 ml/kg al giorno più circa 500 ml per ogni ora di allenamento.",
+      "Prima della gara e dei lunghi: 400–500 ml di acqua 2–3 ore prima.",
+      "Nei lunghi sopra i 90': 400–600 ml all'ora. A dicembre fa freddo, quindi il sodio pesa poco."
+    ],
+    "fueling": [
+      { "weeks": "1–3", "run": "12–15 km", "what": "Solo acqua. Facoltativo: 1 gel dopo 60' per provarlo" },
+      { "weeks": "4–5", "run": "16–18 km", "what": "30–45 g di carboidrati all'ora: 1 gel al 45' e uno al 90'" },
+      { "weeks": "6", "run": "12 km (scarico)", "what": "Solo acqua" },
+      { "weeks": "7–8", "run": "18–20 km", "what": "Obiettivo 60 g all'ora (1 gel da ~25 g ogni 25'), come in gara" },
+      { "weeks": "9", "run": "Gara 10 km (29/11)", "what": "Niente durante. Colazione ricca di carboidrati 3 ore prima" },
+      { "weeks": "10", "run": "14 km", "what": "Prova della strategia gara, incluso il caffè o il gel con caffeina" },
+      { "weeks": "11", "run": "Mezza tranquilla (13/12)", "what": "Prova generale completa di colazione, gel e bevande" },
+      { "weeks": "12", "run": "Gara 20/12", "what": "Vedi la sezione Gara" }
+    ],
+    "fuelingRule": "In gara non si usa nulla che non sia stato provato almeno 2 volte.",
+    "raceHalf": {
+      "title": "Gara del 20/12 (mezza maratona)",
+      "steps": [
+        "Giovedì 17 e venerdì 18/12: ~6–7 g/kg di carboidrati.",
+        "Sabato 19/12: ~8 g/kg (~550–600 g), poche fibre (pasta o riso bianco, pane bianco, patate, frutta matura, meno legumi e crusca). Niente cibi nuovi.",
+        "Sabato sera: cena ricca di carboidrati, non troppo abbondante, senza alcol.",
+        "Colazione 3 ore prima: ~110 g di carboidrati. Esempio: 100 g di pane bianco o fette biscottate con 40 g di marmellata, 1 banana, caffè abituale, 400–500 ml di acqua.",
+        "Prima del via (10–15'): piccoli sorsi d'acqua, eventualmente 1 gel.",
+        "Durante: 60 g di carboidrati all'ora. Con un tempo di ~1:35 sono 3–4 gel da ~25 g, ai minuti 20, 45, 70 e, se serve, 90. Acqua ai ristori.",
+        "Caffeina: ~3 mg/kg circa 60' prima, oppure un gel con caffeina intorno al 10° km. Da testare il 13/12.",
+        "Dopo: 1 g/kg di carboidrati e 25–30 g di proteine entro un'ora."
+      ]
+    },
+    "race10k": {
+      "title": "Gara del 29/11 (10 km)",
+      "steps": [
+        "2 giorni prima: carboidrati a ~6–7 g/kg.",
+        "Colazione ricca di carboidrati 3 ore prima, nessun gel necessario durante.",
+        "Lunedì 30/11 è riposo: proteine e carboidrati normali, niente digiuno."
+      ]
+    },
+    "supplements": [
+      "Caffeina: l'integratore con più evidenza per la performance. Da provare nei lunghi.",
+      "Creatina: utile per la forza, non migliora la mezza e può far salire il peso di 1–2 kg per l'acqua trattenuta. Da valutare se sospenderla nelle ultime 4–6 settimane.",
+      "Vitamina D, omega 3, magnesio, zinco: compatibili con il piano. Rispettare i dosaggi indicati in etichetta.",
+      "Vegetariano: controllare B12 e ferritina una volta l'anno.",
+      "Succo di barbabietola (nitrati): evidenza moderata, facoltativo. Da provare in allenamento.",
+      "Bicarbonato e chetoni: non consigliati."
+    ],
+    "weightControl": [
+      "Pesarsi al mattino a digiuno, ogni giorno o 3 volte a settimana. Leggere la media settimanale.",
+      "Obiettivo: al massimo −0,1/−0,15 kg alla settimana. Il calo non deve compromettere le sedute di qualità.",
+      "Sett. 1–8: se dopo 3 settimane il peso medio non cala, togliere ~150 kcal nei giorni di riposo e nel lunedì. Non toccare martedì e domenica.",
+      "Sett. 9–12: niente deficit. Aggiungere ~150 kcal al giorno se serve.",
+      "Se ti senti stanco, dormi male o le ripetute calano senza motivo, controlla prima di aver mangiato abbastanza carboidrati.",
+      "Dolori, vertigini o sintomi anomali: sentire il medico."
+    ],
+    "alcoholCoffee": [
+      "Alcol: 1–2 birre a settimana vanno bene, ma non la sera prima di gare e lunghi.",
+      "Caffè: 3 al giorno vanno bene. Evitare l'ultimo dopo le 16 per non peggiorare il sonno."
+    ]
+  },
+  "menu": {
+    "breakfast": "Yogurt greco 200 g, avena 50 g, frutta 150 g, noci 15 g. In alternativa overnight oats la sera prima.",
+    "days": {
+      "lun": { "lunch": "Ragù di lenticchie con pasta 80 g", "snacks": "Skyr + frutta; Kit A 1 ora prima della forza", "dinner": "Merluzzo 200 g, patate 250 g, verdure 300 g" },
+      "mar": { "lunch": "Curry di ceci con riso 110 g (30 g extra)", "snacks": "Kit A ~17:30; Kit B dopo la corsa", "dinner": "2 uova + tofu 100 g, patate 250 g, verdure 300 g" },
+      "mer": { "lunch": "Zuppa di ceci e verdure con pasta 80 g", "snacks": "Skyr + frutta; pane 50 g con hummus 40 g", "dinner": "Tempeh o seitan 150 g, patate 250 g, verdure 300 g" },
+      "gio": { "lunch": "Ragù di lenticchie con pasta 110 g (30 g extra)", "snacks": "Kit A prima della bici; skyr + frutta", "dinner": "2 uova + tofu 100 g, patate 250 g, verdure 300 g" },
+      "ven": { "lunch": "Post-corsa: Kit B subito, poi curry di ceci con riso 80 g", "snacks": "Kit A 2 ore prima; pane 50 g con hummus 40 g", "dinner": "Salmone 150 g, patate 250 g, verdure 300 g" },
+      "sab": { "lunch": "Zuppa di ceci e verdure con pasta 80 g", "snacks": "Skyr + frutta; pane 50 g con hummus 40 g", "dinner": "Pasta 100 g al posto delle patate + pesce bianco 200 g + verdure" },
+      "dom": { "lunch": "Post-lungo: Kit B subito, poi ragù di lenticchie con pasta 130 g (50 g extra)", "snacks": "2 × Kit A a colazione; gel durante il lungo", "dinner": "Frittata di 3 uova con verdure, patate 250 g" }
+    },
+    "raceNote": "La domenica di gara (29/11, 13/12, 20/12) cambia la colazione e il fueling: vedi la sezione Gara."
+  },
+  "recipes": [
+    {
+      "name": "Ragù di lenticchie",
+      "perWeek": "3 porzioni",
+      "perPortion": "Lenticchie cotte 150 g, passata di pomodoro 100 g, verdure a cubetti surgelate (zucchine, carote, sedano, peperoni) 300 g, olio extravergine 5 g, cipolla, sale, origano.",
+      "batch": "Per 3 porzioni: lenticchie cotte 450 g, verdure 900 g, passata 300 g, olio 15 g.",
+      "method": "Cuocere verdure e passata 15', aggiungere le lenticchie, 5' ancora. Surgelare in contenitori singoli. Servire con pasta."
+    },
+    {
+      "name": "Curry di ceci e spinaci",
+      "perWeek": "2 porzioni",
+      "perPortion": "Ceci cotti 150 g, spinaci surgelati 150 g, verdure miste 150 g, latte di cocco light 50 ml, curry in polvere 1 cucchiaino, cipolla, olio 5 g.",
+      "batch": "Per 2 porzioni: ceci 300 g, spinaci 300 g, verdure 300 g, latte di cocco 100 ml.",
+      "method": "Cuocere la cipolla, aggiungere verdure, ceci e curry, poi il latte di cocco. Servire con riso."
+    },
+    {
+      "name": "Zuppa di ceci e verdure",
+      "perWeek": "2 porzioni",
+      "perPortion": "Ceci o borlotti cotti 150 g, minestrone di verdure surgelato 300 g, brodo vegetale, olio 5 g, rosmarino.",
+      "batch": "Per 2 porzioni: legumi 300 g, minestrone 600 g, brodo 600 ml.",
+      "method": "Cuocere la pasta direttamente nella zuppa o a parte."
+    },
+    {
+      "name": "Riso cotto in porzioni",
+      "perWeek": "7 porzioni",
+      "perPortion": "80 g crudi (~220 g cotti).",
+      "batch": "Cuocere 700 g di riso e dividere in porzioni.",
+      "method": "Surgelare. Scongelare in microonde in 2'."
+    },
+    {
+      "name": "Patate al forno",
+      "perWeek": "3 serate",
+      "perPortion": "Patate a cubetti 250 g, olio 5 g, rosmarino.",
+      "batch": "Infornare per 2–3 serate insieme.",
+      "method": "200 °C per 35'. In alternativa patate surgelate da forno, senza panatura."
+    }
+  ],
+  "cookingSession": [
+    "Cuocere il riso in pentola e la verdura in padella (curry e ragù) in parallelo.",
+    "Preparare ragù (3 porzioni), curry (2), zuppa (2). La pasta resta in dispensa.",
+    "Infornare le patate per 2–3 serate mentre si cucina.",
+    "Lasciare raffreddare, dividere nei contenitori, etichettare con il giorno e mettere nel freezer o in frigo.",
+    "Preparare gli overnight oats per il lunedì."
+  ],
+  "foodSafety": [
+    "Scongelare in frigo la sera prima o in microonde. Non ricongelare.",
+    "Consumare in 3 giorni i piatti scongelati, in 3 mesi quelli surgelati.",
+    "Pesce e uova ben cotti."
+  ],
+  "shopping": {
+    "weekly": [
+      { "item": "Yogurt greco", "qty": "1,4 kg" },
+      { "item": "Skyr", "qty": "7 vasetti da 170 g" },
+      { "item": "Latte (o bevanda di soia)", "qty": "1 litro" },
+      { "item": "Uova", "qty": "8" },
+      { "item": "Tofu", "qty": "200 g" },
+      { "item": "Tempeh o seitan", "qty": "150 g" },
+      { "item": "Parmigiano", "qty": "110 g" },
+      { "item": "Frutta di stagione (mele, pere, kiwi, arance)", "qty": "~2 kg" },
+      { "item": "Banane", "qty": "9" },
+      { "item": "Pane integrale", "qty": "650 g" },
+      { "item": "Hummus", "qty": "300 g" },
+      { "item": "Verdure fresche (insalata, pomodori, ecc.)", "qty": "~1 kg" },
+      { "item": "Patate", "qty": "1,8 kg" },
+      { "item": "Marmellata o miele", "qty": "130 g" }
+    ],
+    "freezer": [
+      { "item": "Merluzzo, nasello (filetti surgelati)", "qty": "600 g a settimana" },
+      { "item": "Salmone", "qty": "150–200 g a settimana" },
+      { "item": "Verdure surgelate miste (cubetti, minestrone, spinaci)", "qty": "~3 kg a settimana" },
+      { "item": "Frutta surgelata (frutti di bosco, ecc.)", "qty": "500 g a settimana" },
+      { "item": "Riso e pasta (dispensa)", "qty": "700 g a settimana" },
+      { "item": "Legumi cotti in lattina o barattolo", "qty": "4–5 (circa 1 kg sgocciolato) a settimana" },
+      { "item": "Legumi secchi (alternativa)", "qty": "350 g a settimana" },
+      { "item": "Passata di pomodoro", "qty": "400 g a settimana" },
+      { "item": "Avena", "qty": "350 g a settimana" },
+      { "item": "Noci", "qty": "105 g a settimana" },
+      { "item": "Olio extravergine", "qty": "150 ml a settimana" },
+      { "item": "Proteine in polvere", "qty": "90 g a settimana" },
+      { "item": "Latte di cocco light, curry, spezie", "qty": "quanto serve" }
+    ],
+    "sport": [
+      { "item": "Gel da ~25 g di carboidrati", "qty": "2–3 per lungo; 3–4 a settimana nelle sett. 7–8" },
+      { "item": "Bevanda con carboidrati (opzionale)", "qty": "500 ml nei lunghi delle sett. 7–8" },
+      { "item": "Gel con caffeina", "qty": "1 per prova (sett. 10 e 13/12)" }
+    ],
+    "sportNote": "Provare almeno 2 marche di gel nelle sett. 4–5 e scegliere quella tollerata meglio."
+  }
+}

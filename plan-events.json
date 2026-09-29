@@ -1,0 +1,397 @@
+{
+ "athlete_id": "i731779",
+ "events": [
+  {
+   "id": 139988111,
+   "date": "2026-09-29",
+   "name": "S1 Mar - Facile + 5 allunghi",
+   "type": "Run",
+   "category": "WORKOUT"
+  },
+  {
+   "id": 139988238,
+   "date": "2026-10-02",
+   "name": "S1 Ven - Progressivo",
+   "type": "Run",
+   "category": "WORKOUT"
+  },
+  {
+   "id": 139988240,
+   "date": "2026-10-04",
+   "name": "S1 Dom - Lungo facile",
+   "type": "Run",
+   "category": "WORKOUT"
+  },
+  {
+   "id": 139988243,
+   "date": "2026-10-05",
+   "name": "S2 Lun - Forza + pliometria (fase 1)",
+   "type": "WeightTraining",
+   "category": "WORKOUT"
+  },
+  {
+   "id": 139988245,
+   "date": "2026-10-06",
+   "name": "S2 Mar - 4x1 km sub-soglia",
+   "type": "Run",
+   "category": "WORKOUT"
+  },
+  {
+   "id": 139988249,
+   "date": "2026-10-08",
+   "name": "S2 Gio - Zwift Z2 60'",
+   "type": "VirtualRide",
+   "category": "WORKOUT"
+  },
+  {
+   "id": 139988251,
+   "date": "2026-10-09",
+   "name": "S2 Ven - Easy run",
+   "type": "Run",
+   "category": "WORKOUT"
+  },
+  {
+   "id": 139988253,
+   "date": "2026-10-11",
+   "name": "S2 Dom - Lungo con finale medio",
+   "type": "Run",
+   "category": "WORKOUT"
+  },
+  {
+   "id": 139988255,
+   "date": "2026-10-12",
+   "name": "S3 Lun - Forza + pliometria (fase 1)",
+   "type": "WeightTraining",
+   "category": "WORKOUT"
+  },
+  {
+   "id": 139988257,
+   "date": "2026-10-13",
+   "name": "S3 Mar - 5x1 km a VC",
+   "type": "Run",
+   "category": "WORKOUT"
+  },
+  {
+   "id": 139988259,
+   "date": "2026-10-15",
+   "name": "S3 Gio - Zwift Z2 60'",
+   "type": "VirtualRide",
+   "category": "WORKOUT"
+  },
+  {
+   "id": 139988261,
+   "date": "2026-10-16",
+   "name": "S3 Ven - Easy run",
+   "type": "Run",
+   "category": "WORKOUT"
+  },
+  {
+   "id": 139988264,
+   "date": "2026-10-18",
+   "name": "S3 Dom - Lungo con finale medio",
+   "type": "Run",
+   "category": "WORKOUT"
+  },
+  {
+   "id": 139988266,
+   "date": "2026-10-19",
+   "name": "S4 Lun - Forza + pliometria (fase 1)",
+   "type": "WeightTraining",
+   "category": "WORKOUT"
+  },
+  {
+   "id": 139988268,
+   "date": "2026-10-20",
+   "name": "S4 Mar - 4x1500 m a VC",
+   "type": "Run",
+   "category": "WORKOUT"
+  },
+  {
+   "id": 139988271,
+   "date": "2026-10-22",
+   "name": "S4 Gio - Zwift Z2 60'",
+   "type": "VirtualRide",
+   "category": "WORKOUT"
+  },
+  {
+   "id": 139988274,
+   "date": "2026-10-23",
+   "name": "S4 Ven - Easy run",
+   "type": "Run",
+   "category": "WORKOUT"
+  },
+  {
+   "id": 139988276,
+   "date": "2026-10-25",
+   "name": "S4 Dom - Lungo con finale sub-soglia",
+   "type": "Run",
+   "category": "WORKOUT"
+  },
+  {
+   "id": 139988278,
+   "date": "2026-10-26",
+   "name": "S5 Lun - Forza + pliometria (fase 2)",
+   "type": "WeightTraining",
+   "category": "WORKOUT"
+  },
+  {
+   "id": 139988281,
+   "date": "2026-10-27",
+   "name": "S5 Mar - 3x2 km a VC",
+   "type": "Run",
+   "category": "WORKOUT"
+  },
+  {
+   "id": 139988283,
+   "date": "2026-10-29",
+   "name": "S5 Gio - Zwift Z2 60'",
+   "type": "VirtualRide",
+   "category": "WORKOUT"
+  },
+  {
+   "id": 139988285,
+   "date": "2026-10-30",
+   "name": "S5 Ven - Easy run",
+   "type": "Run",
+   "category": "WORKOUT"
+  },
+  {
+   "id": 139988287,
+   "date": "2026-11-01",
+   "name": "S5 Dom - Lungo con finale sub-soglia",
+   "type": "Run",
+   "category": "WORKOUT"
+  },
+  {
+   "id": 139988364,
+   "date": "2026-11-02",
+   "name": "S6 Lun - Forza ridotta (scarico)",
+   "type": "WeightTraining",
+   "category": "WORKOUT"
+  },
+  {
+   "id": 139988368,
+   "date": "2026-11-03",
+   "name": "S6 Mar - 4x1 km a VC",
+   "type": "Run",
+   "category": "WORKOUT"
+  },
+  {
+   "id": 139988371,
+   "date": "2026-11-05",
+   "name": "S6 Gio - Zwift Z2 45'",
+   "type": "VirtualRide",
+   "category": "WORKOUT"
+  },
+  {
+   "id": 139988373,
+   "date": "2026-11-06",
+   "name": "S6 Ven - Fartlek 4x2'",
+   "type": "Run",
+   "category": "WORKOUT"
+  },
+  {
+   "id": 139988376,
+   "date": "2026-11-08",
+   "name": "S6 Dom - Lungo facile",
+   "type": "Run",
+   "category": "WORKOUT"
+  },
+  {
+   "id": 139988380,
+   "date": "2026-11-09",
+   "name": "S7 Lun - Forza + pliometria (fase 2)",
+   "type": "WeightTraining",
+   "category": "WORKOUT"
+  },
+  {
+   "id": 139988382,
+   "date": "2026-11-10",
+   "name": "S7 Mar - 5x1500 m a ritmo gara",
+   "type": "Run",
+   "category": "WORKOUT"
+  },
+  {
+   "id": 139988383,
+   "date": "2026-11-12",
+   "name": "S7 Gio - Zwift Z2 60'",
+   "type": "VirtualRide",
+   "category": "WORKOUT"
+  },
+  {
+   "id": 139988384,
+   "date": "2026-11-13",
+   "name": "S7 Ven - Easy run",
+   "type": "Run",
+   "category": "WORKOUT"
+  },
+  {
+   "id": 139988385,
+   "date": "2026-11-15",
+   "name": "S7 Dom - Lungo con 8 km sub-soglia",
+   "type": "Run",
+   "category": "WORKOUT"
+  },
+  {
+   "id": 139988386,
+   "date": "2026-11-16",
+   "name": "S8 Lun - Forza + pliometria (fase 2)",
+   "type": "WeightTraining",
+   "category": "WORKOUT"
+  },
+  {
+   "id": 139988387,
+   "date": "2026-11-17",
+   "name": "S8 Mar - 2x4 km a VC",
+   "type": "Run",
+   "category": "WORKOUT"
+  },
+  {
+   "id": 139988388,
+   "date": "2026-11-19",
+   "name": "S8 Gio - Zwift Z2 60'",
+   "type": "VirtualRide",
+   "category": "WORKOUT"
+  },
+  {
+   "id": 139988390,
+   "date": "2026-11-20",
+   "name": "S8 Ven - Easy run",
+   "type": "Run",
+   "category": "WORKOUT"
+  },
+  {
+   "id": 139988391,
+   "date": "2026-11-22",
+   "name": "S8 Dom - Lungo 20 km con finale sub-soglia",
+   "type": "Run",
+   "category": "WORKOUT"
+  },
+  {
+   "id": 139988392,
+   "date": "2026-11-23",
+   "name": "S9 Lun - Forza + pliometria (fase 3)",
+   "type": "WeightTraining",
+   "category": "WORKOUT"
+  },
+  {
+   "id": 139988394,
+   "date": "2026-11-24",
+   "name": "S9 Mar - 4x1 km a VC (leggero)",
+   "type": "Run",
+   "category": "WORKOUT"
+  },
+  {
+   "id": 139988395,
+   "date": "2026-11-26",
+   "name": "S9 Gio - Zwift Z2 45'",
+   "type": "VirtualRide",
+   "category": "WORKOUT"
+  },
+  {
+   "id": 139988396,
+   "date": "2026-11-27",
+   "name": "S9 Ven - Easy run + allunghi",
+   "type": "Run",
+   "category": "WORKOUT"
+  },
+  {
+   "id": 139988397,
+   "date": "2026-11-29",
+   "name": "S9 Dom - GARA 10 km (test)",
+   "type": "Run",
+   "category": "WORKOUT"
+  },
+  {
+   "id": 139988398,
+   "date": "2026-12-01",
+   "name": "S10 Mar - 4x2 km a ritmo gara",
+   "type": "Run",
+   "category": "WORKOUT"
+  },
+  {
+   "id": 139988399,
+   "date": "2026-12-03",
+   "name": "S10 Gio - Zwift Z2 45'",
+   "type": "VirtualRide",
+   "category": "WORKOUT"
+  },
+  {
+   "id": 139988401,
+   "date": "2026-12-04",
+   "name": "S10 Ven - Easy run",
+   "type": "Run",
+   "category": "WORKOUT"
+  },
+  {
+   "id": 139988404,
+   "date": "2026-12-06",
+   "name": "S10 Dom - Lungo 14 km con 5 km a VC",
+   "type": "Run",
+   "category": "WORKOUT"
+  },
+  {
+   "id": 139988405,
+   "date": "2026-12-07",
+   "name": "S11 Lun - Mobilita + core + pogo",
+   "type": "WeightTraining",
+   "category": "WORKOUT"
+  },
+  {
+   "id": 139988406,
+   "date": "2026-12-08",
+   "name": "S11 Mar - 4x1 km a ritmo gara",
+   "type": "Run",
+   "category": "WORKOUT"
+  },
+  {
+   "id": 139988409,
+   "date": "2026-12-10",
+   "name": "S11 Gio - Zwift Z2 35'",
+   "type": "VirtualRide",
+   "category": "WORKOUT"
+  },
+  {
+   "id": 139988412,
+   "date": "2026-12-11",
+   "name": "S11 Ven - Easy run + allunghi",
+   "type": "Run",
+   "category": "WORKOUT"
+  },
+  {
+   "id": 139988414,
+   "date": "2026-12-13",
+   "name": "S11 Dom - Mezza maratona tranquilla",
+   "type": "Run",
+   "category": "WORKOUT"
+  },
+  {
+   "id": 139988417,
+   "date": "2026-12-15",
+   "name": "S12 Mar - 3x1 km a ritmo gara",
+   "type": "Run",
+   "category": "WORKOUT"
+  },
+  {
+   "id": 139988421,
+   "date": "2026-12-17",
+   "name": "S12 Gio - Zwift Z2 35'",
+   "type": "VirtualRide",
+   "category": "WORKOUT"
+  },
+  {
+   "id": 139988423,
+   "date": "2026-12-18",
+   "name": "S12 Ven - Easy run + allunghi",
+   "type": "Run",
+   "category": "WORKOUT"
+  },
+  {
+   "id": 139988426,
+   "date": "2026-12-20",
+   "name": "GARA - Mezza maratona 1:35",
+   "type": "Run",
+   "category": "WORKOUT"
+  }
+ ]
+}
